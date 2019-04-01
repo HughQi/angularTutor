@@ -16,7 +16,6 @@ export class ServerComponent {
     students: Student[] = [new Student('Bill Gates', 'Computer Science'),
                            new Student('Steve Jobs', 'Computer Science'),
                            new Student('Elon Musk', 'Computer Science')];
-
     getServerStatus() {
       return this.serverStatus;
     }

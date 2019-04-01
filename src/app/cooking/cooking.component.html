@@ -1,0 +1,36 @@
+<div class="container" xmlns:disabled="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+  <div class="leftContainer">
+    <div class="inputContainer">
+      <div class="title">
+        <h4>Please Enter Your Food Name</h4>
+      </div>
+
+      <div class="searchContainer">
+        <div>
+          <input class="input" type="text" [(ngModel)]="inputFood" (ngModelChange)="check()">
+        </div>
+
+        <div class="searchButton">
+          <button class="button1" style="background-color: deepskyblue; font-size: 12pt" [disabled]="isEmpty" (click)="searchFood()">Search</button>
+          <button class="button2" style="background-color: deepskyblue; font-size: 12pt" (click)="reset()">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="outputContainer">
+      <div *ngIf="isSearch && isEmpty" class="informBoxBoarder notFoundFood">
+        <h4 style="text-align: center">Please Enter your food name</h4>
+      </div>
+
+      <div *ngIf="isSearch && found"  class="informBoxBoarder res">
+        <h4 style="text-align: center" *ngIf="!isEmpty">Found food: {{ foodName }}</h4>
+      </div>
+
+      <div *ngIf="isSearch && !found && !isEmpty" class="notFoundFood">
+        <h4 style="text-align: center">There are no such food! Please try again!</h4>
+      </div>
+    </div>
+  </div>
+  <div class="rightContainer"></div>
+</div>
+
